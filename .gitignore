@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Vite
+dist/
+.vite/
+
+# Logs
+*.log
+
+# Environment Variables
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+
+# Operating System
+Thumbs.db
+.DS_Store
+
+# Cache
+.cache/
+
+# Solidity
+artifacts/
+cache/
+
+# Temporary Files
+*.tmp
+*.temp
+
+# Coverage
+coverage/
