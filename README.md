@@ -1,363 +1,381 @@
-# 📚 ScholarChain
+# ScholarChain
 
-## Decentralized Achievement Credential System
 
-ScholarChain is a blockchain-powered credential platform that converts academic, internship, workshop, research, and achievement records into secure digital credentials.
 
-Traditional certificates can be lost, forged, or difficult to verify. ScholarChain solves this by issuing credentials as blockchain-backed Soulbound Tokens (SBTs), allowing anyone to instantly verify authenticity while ensuring ownership remains permanently tied to the recipient.
+## Decentralized Credential Verification Platform
+
+
+
+ScholarChain is a blockchain-based credential management and verification platform that enables institutions to issue secure, tamper-proof digital credentials as Soulbound Tokens (SBTs). The platform provides a transparent and decentralized mechanism for issuing, storing, and verifying academic and professional achievements.
+
+
+
+By leveraging Ethereum blockchain technology and decentralized storage, ScholarChain ensures credential authenticity, ownership integrity, and public verifiability without reliance on centralized databases.
+
+
 
 ---
 
-# 🌐 Live Demo
 
-### Application URL
+
+## Live Deployment
+
+
+
+**Application:**
 
 https://scholarchain-credential-system.vercel.app/
 
-### GitHub Repository
+
+
+**Repository:**
 
 https://github.com/Starcloud-retro/scholarchain-credential-system
 
----
 
-# 🚀 Features
-
-### 🎖 Soulbound Achievement Tokens
-Credentials are issued as non-transferable NFTs (Soulbound Tokens) that remain permanently linked to the recipient.
-
-### 🔍 Credential Verification
-Any person, organization, or recruiter can verify credentials directly through the blockchain.
-
-### 🌐 Public Verification Portal
-Verification does not require access to the issuer's database.
-
-### 🔑 Wallet-Based Authentication
-Uses MetaMask for decentralized authentication.
-
-### 📦 Decentralized Storage
-Credential metadata and certificate assets are stored on IPFS through Pinata.
-
-### 🖥 Modern Dashboard
-Responsive React-based interface for issuing and verifying credentials.
-
-### 🏛 Multi-Issuer Ready
-Supports organizations issuing credentials through authorized blockchain wallets.
 
 ---
 
-# 🛠 Technology Stack
 
-## Frontend
 
-- React
-- Vite
-- Ethers.js
-- Tailwind CSS
+## Key Features
 
-## Blockchain
 
-- Solidity
-- Ethereum Sepolia Testnet
-- OpenZeppelin Contracts
 
-## Storage
+### Credential Issuance
 
-- IPFS
-- Pinata
 
-## Wallet Integration
 
-- MetaMask
+* Blockchain-based credential creation
 
-## Deployment
+* Soulbound (non-transferable) token architecture
 
-- Vercel
+* Immutable academic and professional records
+
+* Metadata storage through IPFS
+
+
+
+### Credential Verification
+
+
+
+* Public verification portal
+
+* On-chain authenticity validation
+
+* Instant ownership verification
+
+* Transparent credential history
+
+
+
+### Role-Based Access Control
+
+
+
+* **Student** – View and verify issued credentials
+
+* **Issuer** – Create and manage credentials
+
+* **Administrator** – Approve issuers and govern the platform
+
+
+
+### Decentralized Infrastructure
+
+
+
+* Ethereum Sepolia integration
+
+* IPFS-based metadata storage
+
+* MetaMask wallet authentication
+
+* Smart contract–driven trust model
+
+
 
 ---
 
-# 🏗 System Architecture
+
+
+## System Architecture
+
+
 
 ```text
-Issuer Wallet
-      ↓
+
+Institution / Organization
+
+            │
+
+            ▼
+
+     Issue Credential
+
+            │
+
+            ▼
+
+      Metadata (IPFS)
+
+            │
+
+            ▼
+
+     Soulbound Token
+
+            │
+
+            ▼
+
+ Ethereum Smart Contract
+
+            │
+
+            ▼
+
+ Credential Dashboard
+
+            │
+
+            ▼
+
+ Public Verification
+
+```
+
+
+
+---
+
+
+
+## Technology Stack
+
+
+
+### Frontend
+
+
+
+* React
+
+* Vite
+
+* React Router
+
+* Ethers.js
+
+* Tailwind CSS
+
+
+
+### Blockchain
+
+
+
+* Solidity
+
+* Ethereum Sepolia Testnet
+
+
+
+### Storage
+
+
+
+* IPFS
+
+* Pinata
+
+
+
+### Authentication
+
+
+
+* MetaMask
+
+
+
+### Deployment
+
+
+
+* GitHub
+
+* Vercel
+
+
+
+---
+
+
+
+## Project Structure
+
+
+
+```text
+
+scholarchain/
+
+│
+
+├── contracts/          Smart contracts
+
+├── docs/               Project documentation
+
+├── json/               Credential metadata samples
+
+├── frontend/           React application
+
+│   ├── src/
+
+│   ├── public/
+
+│   ├── package.json
+
+│   └── vite.config.js
+
+│
+
+└── README.md
+
+```
+
+
+
+---
+
+
+
+## Workflow
+
+
+
+```text
+
+Issuer
+
+   │
+
+   ▼
+
 Creates Credential
-      ↓
-Metadata Uploaded to IPFS
-      ↓
-CID Generated
-      ↓
-Soulbound Token Minted
-      ↓
-Stored on Ethereum Blockchain
-      ↓
-Visible on Dashboard
-      ↓
-Public Verification
+
+   │
+
+   ▼
+
+Uploads Metadata to IPFS
+
+   │
+
+   ▼
+
+Smart Contract Mints SBT
+
+   │
+
+   ▼
+
+Credential Assigned to Student
+
+   │
+
+   ▼
+
+Public Verification Available
+
 ```
+
+
 
 ---
 
-# 🎯 Supported Credential Types
 
-- 🎓 Academic Credentials
-- 💼 Internship Credentials
-- 🛠 Workshop Credentials
-- 🏆 Competition Credentials
-- 📖 Research Credentials
-- 🤝 Volunteer Credentials
 
----
+## Current Capabilities
 
-# 📋 Prerequisites
 
-Before running this project, install:
 
-## 1. Node.js
+* Wallet-based authentication
 
-Download:
+* Role-aware user interface
 
-https://nodejs.org/
+* Credential issuance and retrieval
 
-Verify installation:
+* Credential verification portal
 
-```bash
-node -v
-npm -v
-```
+* IPFS metadata integration
 
-## 2. MetaMask
+* Administrator-controlled issuer approval workflow
 
-Install browser extension:
+* Soulbound credential architecture
 
-https://metamask.io/
+* Ethereum Sepolia deployment
 
-Create a wallet and switch to:
 
-```text
-Ethereum Sepolia Test Network
-```
-
-## 3. Git
-
-Download:
-
-https://git-scm.com/
-
-Verify installation:
-
-```bash
-git --version
-```
 
 ---
 
-# ⚙ Local Installation
 
-Clone repository:
 
-```bash
-git clone https://github.com/Starcloud-retro/scholarchain-credential-system.git
-```
+## Future Enhancements
 
-Move into project:
 
-```bash
-cd scholarchain-credential-system
-```
 
-Move into frontend:
+* QR-code credential verification
 
-```bash
-cd frontend
-```
+* Multi-chain deployment support
 
-Install dependencies:
+* Institutional verification framework
 
-```bash
-npm install
-```
+* Employer verification portal
 
-Start development server:
+* DAO-based governance model
 
-```bash
-npm run dev
-```
+* Reputation-based issuer scoring
 
-Application runs at:
+* Advanced analytics dashboard
 
-```text
-http://localhost:5173
-```
+
 
 ---
 
-# ⛓ Smart Contract Deployment
 
-Open Remix IDE:
 
-https://remix.ethereum.org/
+## Team
 
-### Steps
 
-1. Compile Solidity contract
-2. Connect MetaMask
-3. Select **Injected Provider**
-4. Choose **Sepolia Network**
-5. Deploy Contract
-6. Copy deployed contract address
 
-Update:
+### Nexus Credential Systems
 
-```javascript
-src/contracts/config.js
-```
 
-Example:
 
-```javascript
-export const CONTRACT_ADDRESS =
-"YOUR_DEPLOYED_CONTRACT_ADDRESS";
-```
+* Jalaneela Sai Sandeep (24R11A6622)
+
+* Jamulapuram Dhanush Narayana (24R11A6623)
+
+* Kampelli Suhan Ramesh (24R11A6628)
+
+* Adusumilli Rohit Kumar (24R11A6652)
+
+* Banoth Ganesh (24R11A6657)
+
+* Shaik Zaheer Abbas (24R11A6690)
+
+
 
 ---
 
-# 📦 IPFS Metadata Upload
 
-Create credential metadata JSON:
 
-```json
-{
-  "name": "Blockchain Internship",
-  "description": "Successfully completed Blockchain Internship Program",
-  "image": "ipfs://YOUR_IMAGE_CID"
-}
-```
+## License
 
-Upload metadata to Pinata.
 
-Copy generated CID.
 
-Use CID during credential minting.
-
----
-
-# 🖥 Frontend Deployment (Vercel)
-
-Install Vercel CLI:
-
-```bash
-npm install -g vercel
-```
-
-Login:
-
-```bash
-vercel login
-```
-
-Build project:
-
-```bash
-npm run build
-```
-
-Deploy:
-
-```bash
-vercel --prod
-```
-
-For React Router support create:
-
-```text
-frontend/vercel.json
-```
-
-```json
-{
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ]
-}
-```
-
----
-
-# 🔍 Verification Process
-
-1. Open Verify Credential page
-2. Enter Token ID
-3. Click Verify
-4. Credential data is fetched from blockchain
-5. Metadata is loaded from IPFS
-6. Verification result is displayed instantly
-
----
-
-# 📸 Screenshots
-
-## Home Page
-
-_Add screenshot here_
-
-## Credential Verification
-
-_Add screenshot here_
-
-## My Credentials
-
-_Add screenshot here_
-
-## Issue Credential
-
-_Add screenshot here_
-
----
-
-# 👥 Team — Nexus Credential Systems
-
-### Members
-
-- Jalaneela Sai Sandeep (24R11A6622)
-- Jamulapuram Dhanush Narayana (24R11A6623)
-- Kampelli Suhan Ramesh (24R11A6628)
-- Adusumilli Rohit Kumar (24R11A6652)
-- Banoth Ganesh (24R11A6657)
-- Shaik Zaheer Abbas (24R11A6690)
-
----
-
-# 🌟 Future Enhancements
-
-- QR Code Verification
-- Multi-Organization Issuer Portal
-- Credential Revocation Dashboard
-- PDF Certificate Downloads
-- Advanced Search Filters
-- Employer Verification Portal
-- Analytics Dashboard
-
----
-
-# 📜 License
-
-MIT License
-
----
-
-## ❤️ Built With
-
-- Solidity
-- Ethereum Sepolia
-- React
-- Vite
-- Ethers.js
-- IPFS
-- Pinata
-- MetaMask
-- Vercel
-
-Built with ❤️ by **Nexus Credential Systems**
+This project is licensed under the MIT License.
