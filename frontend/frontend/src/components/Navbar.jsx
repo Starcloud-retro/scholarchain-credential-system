@@ -37,6 +37,11 @@ export default function Navbar({ walletState }) {
 							Issue Credential
 						</NavLink>
 					) : null}
+					{!isAuthorizedIssuerRole ? (
+						<NavLink to="/issuer-application" className={navClass}>
+							Apply As Issuer
+						</NavLink>
+					) : null}
 					<NavLink to="/dashboard" className={navClass}>
 						My Credentials
 					</NavLink>
@@ -48,11 +53,18 @@ export default function Navbar({ walletState }) {
 					<NavLink to="/verify" className={navClass}>
 						Verify Credential
 					</NavLink>
+					{isContractOwner ? (
+						<NavLink to="/admin" className={navClass}>
+							Admin
+						</NavLink>
+					) : null}
 				</nav>
 
 				<WalletConnect
 					account={account}
 					organizationLabel={organizationLabel}
+					roleLabel={walletState.roleLabel}
+					roleIcon={walletState.roleIcon}
 					onConnected={handleConnectWallet}
 					onSwitchAccount={handleSwitchAccount}
 					onDisconnected={handleDisconnectWallet}

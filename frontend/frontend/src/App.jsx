@@ -6,13 +6,15 @@ import IssueCredential from './pages/IssueCredential'
 import VerifyCredential from './pages/VerifyCredential'
 import MyCredentials from './pages/MyCredentials'
 import AdminDashboard from './pages/AdminDashboard'
+import Admin from './pages/Admin'
+import IssuerApplication from './pages/IssuerApplication'
 import {
 	connectWallet,
 	switchAccountPermissions,
 	getOwner,
 	isAuthorizedIssuer,
 } from './contracts/ScholarChainService'
-import { getIssuerOrganizationLabel } from './contracts/issuerOrganizations'
+import { getIssuerOrganizationName } from './data/issuerRegistry'
 
 function App() {
 	const [account, setAccount] = useState('')
@@ -102,10 +104,12 @@ function App() {
 				setIsContractOwner(ownerMatch)
 				setIsAuthorizedIssuerRole(authorizedIssuer)
 				setOrganizationLabel(
-					ownerMatch
-						? 'Contract Owner'
-						: getIssuerOrganizationLabel(account) ||
-							(authorizedIssuer ? 'Authorized Issuer' : ''),
+					getIssuerOrganizationName(account) ||
+						(ownerMatch
+							? 'Contract Owner'
+							: authorizedIssuer
+								? 'Authorized Issuer'
+								: ''),
 				)
 			} catch {
 				if (!mounted) return
@@ -151,6 +155,8 @@ function App() {
 			isAuthorizedIssuerRole,
 			isContractOwner,
 			organizationLabel,
+			roleLabel: isContractOwner ? 'Admin' : isAuthorizedIssuerRole ? 'Issuer' : 'Student',
+			roleIcon: isContractOwner ? '🛡' : isAuthorizedIssuerRole ? '🏛' : '🎓',
 			handleConnectWallet,
 			handleSwitchAccount,
 			handleDisconnectWallet,
@@ -184,7 +190,8 @@ function App() {
 						<Route path="/verify" element={<VerifyCredential />} />
 						<Route path="/dashboard" element={<MyCredentials walletState={walletState} />} />
 						<Route path="/issuer-dashboard" element={<AdminDashboard walletState={walletState} />} />
-						<Route path="/admin" element={<Navigate to="/issuer-dashboard" replace />} />
+						<Route path="/issuer-application" element={<IssuerApplication walletState={walletState} />} />
+						<Route path="/admin" element={<Admin walletState={walletState} />} />
 						<Route path="*" element={<Navigate to="/" replace />} />
 					</Routes>
 				</main>

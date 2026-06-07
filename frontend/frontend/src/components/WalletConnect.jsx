@@ -9,6 +9,8 @@ function shortenAddress(address) {
 export default function WalletConnect({
 	account,
 	organizationLabel = '',
+	roleLabel = 'Student',
+	roleIcon = '🎓',
 	onConnected,
 	onSwitchAccount,
 	onDisconnected,
@@ -38,15 +40,20 @@ export default function WalletConnect({
 	}
 
 	if (account) {
+		const walletLabel = organizationLabel || `${roleLabel} Wallet`
+
 		return (
 			<div className={['flex flex-col gap-3', className].join(' ')}>
-				<div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 shadow-lg shadow-black/10">
-					<p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
-						{organizationLabel || 'Issuer Wallet'}
-					</p>
-					<p className="mt-1 text-sm font-semibold text-cyan-200">
-						{shortenAddress(account)}
-					</p>
+				<div className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 shadow-lg shadow-black/10">
+					<div className="flex flex-wrap items-center gap-2">
+						<p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
+							{walletLabel}
+						</p>
+						<span className="rounded-full border border-cyan-300/25 bg-cyan-400/10 px-2 py-1 text-xs font-bold text-cyan-100">
+							{roleIcon} {roleLabel}
+						</span>
+					</div>
+					<p className="mt-1 text-sm font-semibold text-cyan-200">{shortenAddress(account)}</p>
 				</div>
 				<div className="flex items-center gap-2">
 					<button
